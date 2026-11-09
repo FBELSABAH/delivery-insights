@@ -4,6 +4,7 @@ An order-level analytics case study for prioritizing delivery investigations usi
 ## Run
 Python 3.10+; no dependencies. Download the original dataset from https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce into `data/olist.zip`, then run:
 ```
+python3 download.py  # fetch and verify the pinned original archive
 python3 run.py
 python3 -m unittest discover -s tests
 ```
