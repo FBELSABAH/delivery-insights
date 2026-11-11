@@ -1,11 +1,18 @@
 # Delivery investigation brief
 
-Observed 96,470 delivered orders with usable dates; 6,534 were late (6.77%). Excluded 2,971 orders from this metric.
+Of 99,441 Olist orders, 96,470 were delivered with usable dates. **6,534 (6.77%) arrived late.** The rate excludes 2,971 orders. A delivery is late when it arrives after the promised calendar date.
 
-First investigation region: SP, with 1,820 late deliveries. Prioritize by incident volume; the dashboard also shows rates to distinguish scale from reliability. Investigate carriers, routes and promises before changing operations.
+## Where to investigate
 
-Reviews by delivery outcome: [{"late": 0, "reviewed_orders": 89443, "average_score": 4.290589164793966}, {"late": 1, "reviewed_orders": 6381, "average_score": 2.2718225983388183}]. This is descriptive association, not a causal effect. Missing reviews may be selective.
+Customer state **SP** had the most late deliveries (1,820). The regional table reports both the count and the rate for states with at least 100 eligible orders. High order volume can produce many late deliveries even when the rate is relatively low. [Compare states](regions.csv) or [see the monthly trend](trends.csv).
 
-Measured technical impact: automated ingestion, four-table reconciliation, ranked geographic analysis and month-over-month reporting in 2.633 seconds on this run. No revenue uplift or delivery improvement has been observed.
+## What customers reported
 
-Historical 2016–2018 marketplace sample; no claim of current operating performance. Late means delivered calendar date after promised calendar date. Multiple reviews are averaged per order; missing reviews are excluded from review means. Item value excludes freight and is not profit.
+| Delivery outcome | Orders with a review | Mean review score (out of 5) |
+| --- | ---: | ---: |
+| On time or early | 89,443 | 4.29 |
+| Late | 6,381 | 2.27 |
+
+Each reviewed order counts once. Multiple reviews for an order are averaged first. Orders without a review are excluded from the score averages, and customers who leave reviews may differ from those who do not. These historical observations cannot identify a carrier or explain what caused a rating.
+
+[Metric definitions](../sql/model.sql) · [Source, row counts, and build results](results.json)

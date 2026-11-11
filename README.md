@@ -1,14 +1,24 @@
 # Delivery Insights
-An order-level analytics case study for prioritizing delivery investigations using real Olist marketplace data.
 
-## Run
-Python 3.10+; no dependencies. Download the original dataset from https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce into `data/olist.zip`, then run:
-```
-python3 download.py  # fetch and verify the pinned original archive
+Of 99,441 orders in the Olist dataset, 96,470 were delivered with usable dates. Of those, 6,534 arrived after the promised calendar date (6.77%). The SQL analysis ranks regions by late-order volume and tracks the late rate by month.
+
+[Read the findings](reports/findings.md) · [Inspect the results and source counts](reports/results.json) · [See how the SQL defines an eligible order](sql/model.sql)
+
+## Open the dashboard
+
+Open [reports/dashboard.html](reports/dashboard.html) from a local copy of this repository. The report includes its data and works offline. The [regional](reports/regions.csv) and [monthly](reports/trends.csv) tables are also available as CSVs.
+
+## Rebuild from the original data
+
+Use Python 3.10 or later. Run these commands from the repository root. The download script retrieves the original Olist archive and verifies its checksum. If you already have that archive at `data/olist.zip`, start with `python3 run.py`.
+
+```sh
+python3 download.py
 python3 run.py
 python3 -m unittest discover -s tests
 ```
-Open `reports/dashboard.html`. This dashboard works offline. Review `reports/findings.md` and the SQL source. Outputs include a SQLite warehouse and CSV exports suitable for Tableau. A native Tableau workbook is not included.
+
+The build writes the SQLite warehouse to `data/analytics.sqlite` and regenerates the files in `reports/`. The tests use a small in-memory fixture and can run without the dataset.
 
 ## Architecture
 CSV archive → typed SQL expressions over raw staging tables → one-row-per-order facts → eligible deliveries → regional rankings and monthly windows → dashboard and decision brief.
