@@ -4,7 +4,7 @@ import csv, sqlite3, zipfile, hashlib, json, html, time
 ROOT=Path(__file__).resolve().parent
 
 def build():
- start=time.perf_counter(); out=ROOT/'reports';out.mkdir(exist_ok=True)
+ start=time.perf_counter(); out=ROOT/'reports/legacy';out.mkdir(parents=True,exist_ok=True)
  archive=ROOT/'data/olist.zip'
  if not archive.exists(): raise SystemExit('Download Olist to data/olist.zip; see README.md')
  db=sqlite3.connect(':memory:');db.row_factory=sqlite3.Row

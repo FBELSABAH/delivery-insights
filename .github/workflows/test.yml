@@ -1,11 +1,35 @@
-name: Tests
+name: Warehouse verification
 on: [push, pull_request]
 jobs:
-  test:
+  unit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
-      - run: python3 -m unittest discover -s tests
+          python-version: '3.12'
+      - run: python3 -m unittest discover -s tests -v
+  postgres:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:18.3
+        env:
+          POSTGRES_USER: delivery
+          POSTGRES_PASSWORD: local_ci_only
+          POSTGRES_DB: delivery_insights
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd 'pg_isready -U delivery -d delivery_insights'
+          --health-interval 5s --health-timeout 3s --health-retries 20
+    env:
+      DATABASE_URL: postgresql://delivery:local_ci_only@localhost:5432/delivery_insights
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: sudo apt-get update -qq && sudo apt-get install -y postgresql-client
+      - run: python3 download.py
+      - run: python3 warehouse.py --benchmark 2
+      - run: python3 -m unittest discover -s tests -v

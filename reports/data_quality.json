@@ -1,0 +1,74 @@
+{
+  "tables": {
+    "customers": {
+      "source_rows": 99441,
+      "accepted_rows": 99441,
+      "rejected_rows": 0,
+      "exact_duplicate_rows": 0,
+      "duplicate_key_rows": 0,
+      "rejection_reasons": {},
+      "missing_by_source_column": {}
+    },
+    "orders": {
+      "source_rows": 99441,
+      "accepted_rows": 99441,
+      "rejected_rows": 0,
+      "exact_duplicate_rows": 0,
+      "duplicate_key_rows": 0,
+      "rejection_reasons": {},
+      "missing_by_source_column": {
+        "order_approved_at": 160,
+        "order_delivered_carrier_date": 1783,
+        "order_delivered_customer_date": 2965
+      }
+    },
+    "order_items": {
+      "source_rows": 112650,
+      "accepted_rows": 112650,
+      "rejected_rows": 0,
+      "exact_duplicate_rows": 0,
+      "duplicate_key_rows": 0,
+      "rejection_reasons": {},
+      "missing_by_source_column": {}
+    },
+    "order_reviews": {
+      "source_rows": 99224,
+      "accepted_rows": 99224,
+      "rejected_rows": 0,
+      "exact_duplicate_rows": 0,
+      "duplicate_key_rows": 0,
+      "rejection_reasons": {},
+      "missing_by_source_column": {
+        "review_comment_message": 58274,
+        "review_comment_title": 87658
+      },
+      "repeated_review_id_rows": 814
+    }
+  },
+  "rejected_records": [],
+  "policy": "First valid primary-key row wins; subsequent duplicate keys quarantined. Reviews preserve source-row grain. Empty optional delivered timestamps remain null.",
+  "diagnostics": {
+    "missing_delivery_timestamp": 2965,
+    "delivered_without_timestamp": 8,
+    "delivery_before_purchase": 0,
+    "orders_without_items": 775,
+    "orders_without_reviews": 768
+  },
+  "reconciliation": {
+    "order_grain": {
+      "passed": true,
+      "expected": 99441,
+      "actual": 99441
+    },
+    "item_value_brl": {
+      "passed": true,
+      "source_total": "13591643.70",
+      "fact_total": "13591643.70"
+    },
+    "freight_value_brl": {
+      "passed": true,
+      "source_total": "2251909.54",
+      "fact_total": "2251909.54"
+    }
+  }
+}

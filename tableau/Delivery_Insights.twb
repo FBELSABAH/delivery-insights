@@ -1,0 +1,865 @@
+<?xml version='1.0' encoding='utf-8'?>
+<workbook original-version="18.1" source-build="2026.2.3 (20262.26.0912.1023)" source-platform="mac" version="18.1">
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <_.fcp.WorkbookFingerprinting.true...WorkbookFingerprinting />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name="ui.encoding.shelf.height" value="24" />
+    <preference name="ui.shelf.height" value="26" />
+  </preferences>
+  <datasources>
+    <datasource caption="Olist | validated operational metrics" inline="true" name="federated.0wx14uh15ha96i11kfkt21eho23r" version="18.1">
+      <connection class="federated">
+        <named-connections>
+          <named-connection caption="tableau_metrics" name="textscan.1wnwwez0xchnb91b2n3831sw1d1t">
+            <connection class="textscan" directory="Data" filename="tableau_metrics.csv" password="" server="" />
+          </named-connection>
+        </named-connections>
+        <relation connection="textscan.1wnwwez0xchnb91b2n3831sw1d1t" name="tableau_metrics.csv" table="[tableau_metrics#csv]" type="table">
+          <columns character-set="UTF-8" header="yes" locale="en_CA" separator=",">
+            <column datatype="string" name="question" ordinal="0" />
+            <column datatype="string" name="state" ordinal="1" />
+            <column datatype="date" name="month" ordinal="2" />
+            <column datatype="string" name="delivery_outcome" ordinal="3" />
+            <column datatype="integer" name="orders" ordinal="4" />
+            <column datatype="integer" name="late_orders" ordinal="5" />
+            <column datatype="real" name="late_pct" ordinal="6" />
+            <column datatype="real" name="average_review_score" ordinal="7" />
+            <column datatype="integer" name="reviewed_orders" ordinal="8" />
+            <column datatype="real" name="change_percentage_points" ordinal="9" />
+            <column datatype="integer" name="priority_rank" ordinal="10" />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class="capability">
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[tableau_metrics.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype="string" name="character-set">"UTF-8"</attribute>
+              <attribute datatype="string" name="collation">"en_GB"</attribute>
+              <attribute datatype="string" name="field-delimiter">","</attribute>
+              <attribute datatype="string" name="header-row">"true"</attribute>
+              <attribute datatype="string" name="locale">"en_CA"</attribute>
+              <attribute datatype="string" name="single-char">""</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>question</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[question]</local-name>
+            <parent-name>[tableau_metrics.csv]</parent-name>
+            <remote-alias>question</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag="0" name="LEN_RGB" />
+            <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>state</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[state]</local-name>
+            <parent-name>[tableau_metrics.csv]</parent-name>
+            <remote-alias>state</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag="0" name="LEN_RGB" />
+            <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>month</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[month]</local-name>
+            <parent-name>[tableau_metrics.csv]</parent-name>
+            <remote-alias>month</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>delivery_outcome</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[delivery_outcome]</local-name>
+            <parent-name>[tableau_metrics.csv]</parent-name>
+            <remote-alias>delivery_outcome</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag="0" name="LEN_RGB" />
+            <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>orders</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[orders]</local-name>
+            <parent-name>[tableau_metrics.csv]</parent-name>
+            <remote-alias>orders</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>late_orders</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[late_orders]</local-name>
+            <parent-name>[tableau_metrics.csv]</parent-name>
+            <remote-alias>late_orders</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>late_pct</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[late_pct]</local-name>
+            <parent-name>[tableau_metrics.csv]</parent-name>
+            <remote-alias>late_pct</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>average_review_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[average_review_score]</local-name>
+            <parent-name>[tableau_metrics.csv]</parent-name>
+            <remote-alias>average_review_score</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>reviewed_orders</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[reviewed_orders]</local-name>
+            <parent-name>[tableau_metrics.csv]</parent-name>
+            <remote-alias>reviewed_orders</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>change_percentage_points</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[change_percentage_points]</local-name>
+            <parent-name>[tableau_metrics.csv]</parent-name>
+            <remote-alias>change_percentage_points</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+          </metadata-record>
+          <metadata-record class="column">
+            <remote-name>priority_rank</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[priority_rank]</local-name>
+            <parent-name>[tableau_metrics.csv]</parent-name>
+            <remote-alias>priority_rank</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled="yes" />
+      <column caption="tableau_metrics.csv" datatype="table" name="[__tableau_internal_object_id__].[tableau_metrics.csv_93958248763E426481AC6475271E094C]" role="measure" type="quantitative" />
+      <column caption="Average Review Score" datatype="real" name="[average_review_score]" role="measure" type="quantitative" default-format="n0.00" />
+      <column caption="Change Percentage Points" datatype="real" name="[change_percentage_points]" role="measure" type="quantitative" />
+      <column caption="Delivery Outcome" datatype="string" name="[delivery_outcome]" role="dimension" type="nominal" />
+      <column caption="Late Orders" datatype="integer" name="[late_orders]" role="measure" type="quantitative" />
+      <column caption="Late Pct" datatype="real" name="[late_pct]" role="measure" type="quantitative" default-format="n0.0" />
+      <column caption="Month" datatype="date" name="[month]" role="dimension" type="ordinal" />
+      <column caption="Orders" datatype="integer" name="[orders]" role="measure" type="quantitative" />
+      <column caption="Priority Rank" datatype="integer" name="[priority_rank]" role="measure" type="quantitative" />
+      <column caption="Question" datatype="string" name="[question]" role="dimension" type="nominal" />
+      <column caption="Reviewed Orders" datatype="integer" name="[reviewed_orders]" role="measure" type="quantitative" />
+      <column caption="State" datatype="string" name="[state]" role="dimension" type="nominal" />
+      <column caption="Priority / state" datatype="string" name="[ranked_state]" role="dimension" type="ordinal">
+        <calculation class="tableau" formula="RIGHT(&quot;0&quot; + STR(INT([priority_rank])),2) + &quot;  &quot; + [state]" />
+      </column>
+      <column caption="Purchase month" datatype="string" name="[month_label]" role="dimension" type="ordinal">
+        <calculation class="tableau" formula="RIGHT(STR(YEAR([month])),2) + &quot;-&quot; + RIGHT(&quot;0&quot; + STR(MONTH([month])), 2)" />
+      </column>
+      <column caption="Include reliable month" datatype="boolean" name="[include_month]" role="dimension" type="nominal">
+        <calculation class="tableau" formula="[question] = &quot;Monthly reliability&quot; AND [orders] &gt;= 100" />
+      </column>
+      <extract count="-1" enabled="true" object-id="" units="records" user-specific="false">
+        <connection access_mode="readonly" author-locale="en_US" class="hyper" dbname="Data/Delivery_Insights.hyper" default-settings="hyper" schema="Extract" sslmode="" tablename="Extract" username="tableau_internal_user">
+          <relation name="Extract" table="[Extract].[Extract]" type="table" />
+          <metadata-records>
+            <metadata-record class="column">
+              <remote-name>question</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[question]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>question</remote-alias>
+              <ordinal>0</ordinal>
+              <family>tableau_metrics.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag="0" name="LEN_RGB" />
+              <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+            </metadata-record>
+            <metadata-record class="column">
+              <remote-name>state</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[state]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>state</remote-alias>
+              <ordinal>1</ordinal>
+              <family>tableau_metrics.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag="0" name="LEN_RGB" />
+              <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+            </metadata-record>
+            <metadata-record class="column">
+              <remote-name>month</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[month]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>month</remote-alias>
+              <ordinal>2</ordinal>
+              <family>tableau_metrics.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>24</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+            </metadata-record>
+            <metadata-record class="column">
+              <remote-name>delivery_outcome</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[delivery_outcome]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>delivery_outcome</remote-alias>
+              <ordinal>3</ordinal>
+              <family>tableau_metrics.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag="0" name="LEN_RGB" />
+              <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+            </metadata-record>
+            <metadata-record class="column">
+              <remote-name>orders</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[orders]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>orders</remote-alias>
+              <ordinal>4</ordinal>
+              <family>tableau_metrics.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>48</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+            </metadata-record>
+            <metadata-record class="column">
+              <remote-name>late_orders</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[late_orders]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>late_orders</remote-alias>
+              <ordinal>5</ordinal>
+              <family>tableau_metrics.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>47</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+            </metadata-record>
+            <metadata-record class="column">
+              <remote-name>late_pct</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[late_pct]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>late_pct</remote-alias>
+              <ordinal>6</ordinal>
+              <family>tableau_metrics.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>48</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+            </metadata-record>
+            <metadata-record class="column">
+              <remote-name>average_review_score</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[average_review_score]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>average_review_score</remote-alias>
+              <ordinal>7</ordinal>
+              <family>tableau_metrics.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>27</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+            </metadata-record>
+            <metadata-record class="column">
+              <remote-name>reviewed_orders</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[reviewed_orders]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>reviewed_orders</remote-alias>
+              <ordinal>8</ordinal>
+              <family>tableau_metrics.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+            </metadata-record>
+            <metadata-record class="column">
+              <remote-name>change_percentage_points</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[change_percentage_points]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>change_percentage_points</remote-alias>
+              <ordinal>9</ordinal>
+              <family>tableau_metrics.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>23</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+            </metadata-record>
+            <metadata-record class="column">
+              <remote-name>priority_rank</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[priority_rank]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>priority_rank</remote-alias>
+              <ordinal>10</ordinal>
+              <family>tableau_metrics.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[tableau_metrics.csv_93958248763E426481AC6475271E094C]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering="alphabetic" measure-ordering="alphabetic" show-structure="true" />
+      <object-graph>
+        <objects>
+          <object caption="tableau_metrics.csv" id="tableau_metrics.csv_93958248763E426481AC6475271E094C">
+            <properties context="">
+              <relation connection="textscan.1wnwwez0xchnb91b2n3831sw1d1t" name="tableau_metrics.csv" table="[tableau_metrics#csv]" type="table">
+                <columns character-set="UTF-8" header="yes" locale="en_CA" separator=",">
+                  <column datatype="string" name="question" ordinal="0" />
+                  <column datatype="string" name="state" ordinal="1" />
+                  <column datatype="date" name="month" ordinal="2" />
+                  <column datatype="string" name="delivery_outcome" ordinal="3" />
+                  <column datatype="integer" name="orders" ordinal="4" />
+                  <column datatype="integer" name="late_orders" ordinal="5" />
+                  <column datatype="real" name="late_pct" ordinal="6" />
+                  <column datatype="real" name="average_review_score" ordinal="7" />
+                  <column datatype="integer" name="reviewed_orders" ordinal="8" />
+                  <column datatype="real" name="change_percentage_points" ordinal="9" />
+                  <column datatype="integer" name="priority_rank" ordinal="10" />
+                </columns>
+              </relation>
+            </properties>
+            <properties context="extract">
+              <relation name="Extract" table="[Extract].[Extract]" type="table" />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name="1a | Top 10 investigation regions">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Arial" fontsize="10" bold="true">1a | Top 10 investigation regions</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Olist | validated operational metrics" name="federated.0wx14uh15ha96i11kfkt21eho23r" />
+          </datasources>
+          <datasource-dependencies datasource="federated.0wx14uh15ha96i11kfkt21eho23r">
+            <column caption="Priority / state" datatype="string" name="[ranked_state]" role="dimension" type="ordinal">
+              <calculation class="tableau" formula="RIGHT(&quot;0&quot; + STR(INT([priority_rank])),2) + &quot;  &quot; + [state]" />
+            </column>
+            <column-instance column="[ranked_state]" derivation="None" name="[none:ranked_state:ok]" pivot="key" type="ordinal" />
+            <column caption="Late Orders" datatype="integer" name="[late_orders]" role="measure" type="quantitative" />
+            <column-instance column="[late_orders]" derivation="Sum" name="[sum:late_orders:qk]" pivot="key" type="quantitative" />
+            <column caption="Priority Rank" datatype="integer" name="[priority_rank]" role="measure" type="quantitative" />
+            <column-instance column="[priority_rank]" derivation="Avg" name="[avg:priority_rank:qk]" pivot="key" type="quantitative" />
+            <column caption="State" datatype="string" name="[state]" role="dimension" type="nominal" />
+            <column-instance column="[state]" derivation="None" name="[none:state:nk]" pivot="key" type="nominal" />
+            <column caption="Question" datatype="string" name="[question]" role="dimension" type="nominal" />
+            <column-instance column="[question]" derivation="None" name="[none:question:nk]" pivot="key" type="nominal" />
+            <column caption="Orders" datatype="integer" name="[orders]" role="measure" type="quantitative" />
+            <column-instance column="[orders]" derivation="Sum" name="[sum:orders:qk]" pivot="key" type="quantitative" />
+            <column caption="Reviewed Orders" datatype="integer" name="[reviewed_orders]" role="measure" type="quantitative" />
+            <column-instance column="[reviewed_orders]" derivation="Sum" name="[sum:reviewed_orders:qk]" pivot="key" type="quantitative" />
+            <column caption="Late Pct" datatype="real" name="[late_pct]" role="measure" type="quantitative" default-format="n0.0" />
+            <column-instance column="[late_pct]" derivation="Avg" name="[avg:late_pct:qk]" pivot="key" type="quantitative" />
+            <column caption="Average Review Score" datatype="real" name="[average_review_score]" role="measure" type="quantitative" default-format="n0.00" />
+            <column-instance column="[average_review_score]" derivation="Avg" name="[avg:average_review_score:qk]" pivot="key" type="quantitative" />
+          </datasource-dependencies>
+          <filter class="categorical" column="[federated.0wx14uh15ha96i11kfkt21eho23r].[none:question:nk]">
+            <groupfilter function="member" level="[none:question:nk]" member="&quot;Regional priorities&quot;" />
+          </filter>
+          <filter class="categorical" column="[federated.0wx14uh15ha96i11kfkt21eho23r].[none:ranked_state:ok]">
+            <groupfilter function="union" level="[none:ranked_state:ok]">
+              <groupfilter function="member" level="[none:ranked_state:ok]" member="&quot;01  SP&quot;" />
+              <groupfilter function="member" level="[none:ranked_state:ok]" member="&quot;02  RJ&quot;" />
+              <groupfilter function="member" level="[none:ranked_state:ok]" member="&quot;03  MG&quot;" />
+              <groupfilter function="member" level="[none:ranked_state:ok]" member="&quot;04  BA&quot;" />
+              <groupfilter function="member" level="[none:ranked_state:ok]" member="&quot;05  RS&quot;" />
+              <groupfilter function="member" level="[none:ranked_state:ok]" member="&quot;06  SC&quot;" />
+              <groupfilter function="member" level="[none:ranked_state:ok]" member="&quot;07  ES&quot;" />
+              <groupfilter function="member" level="[none:ranked_state:ok]" member="&quot;08  PR&quot;" />
+              <groupfilter function="member" level="[none:ranked_state:ok]" member="&quot;09  CE&quot;" />
+              <groupfilter function="member" level="[none:ranked_state:ok]" member="&quot;10  PE&quot;" />
+            </groupfilter>
+          </filter>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="mark">
+            <format attr="mark-color" value="#0f766e" />
+            <format attr="mark-labels-show" value="true" />
+          </style-rule>
+          <style-rule element="cell">
+            <format attr="font-family" value="Arial" />
+            <format attr="font-size" value="10" />
+          </style-rule>
+          <style-rule element="axis">
+            <format attr="font-size" value="9" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Bar" />
+            <encodings>
+              <tooltip column="[federated.0wx14uh15ha96i11kfkt21eho23r].[sum:orders:qk]" />
+              <text column="[federated.0wx14uh15ha96i11kfkt21eho23r].[sum:late_orders:qk]" />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run>&lt;[federated.0wx14uh15ha96i11kfkt21eho23r].[none:ranked_state:ok]&gt;
+late_orders: &lt;[federated.0wx14uh15ha96i11kfkt21eho23r].[sum:late_orders:qk]&gt;
+Eligible orders: &lt;[federated.0wx14uh15ha96i11kfkt21eho23r].[sum:orders:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows>[federated.0wx14uh15ha96i11kfkt21eho23r].[none:ranked_state:ok]</rows>
+        <cols>[federated.0wx14uh15ha96i11kfkt21eho23r].[sum:late_orders:qk]</cols>
+      </table>
+      <simple-id uuid="{22A46F2D-BF12-4345-A00F-38FD5E3C3373}" />
+    </worksheet>
+    <worksheet name="1b | Late rate in those regions (%)">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Arial" fontsize="10" bold="true">1b | Late rate in those regions (%)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Olist | validated operational metrics" name="federated.0wx14uh15ha96i11kfkt21eho23r" />
+          </datasources>
+          <datasource-dependencies datasource="federated.0wx14uh15ha96i11kfkt21eho23r">
+            <column caption="Priority / state" datatype="string" name="[ranked_state]" role="dimension" type="ordinal">
+              <calculation class="tableau" formula="RIGHT(&quot;0&quot; + STR(INT([priority_rank])),2) + &quot;  &quot; + [state]" />
+            </column>
+            <column-instance column="[ranked_state]" derivation="None" name="[none:ranked_state:ok]" pivot="key" type="ordinal" />
+            <column caption="Late Pct" datatype="real" name="[late_pct]" role="measure" type="quantitative" default-format="n0.0" />
+            <column-instance column="[late_pct]" derivation="Avg" name="[avg:late_pct:qk]" pivot="key" type="quantitative" />
+            <column caption="Priority Rank" datatype="integer" name="[priority_rank]" role="measure" type="quantitative" />
+            <column-instance column="[priority_rank]" derivation="Avg" name="[avg:priority_rank:qk]" pivot="key" type="quantitative" />
+            <column caption="State" datatype="string" name="[state]" role="dimension" type="nominal" />
+            <column-instance column="[state]" derivation="None" name="[none:state:nk]" pivot="key" type="nominal" />
+            <column caption="Question" datatype="string" name="[question]" role="dimension" type="nominal" />
+            <column-instance column="[question]" derivation="None" name="[none:question:nk]" pivot="key" type="nominal" />
+            <column caption="Orders" datatype="integer" name="[orders]" role="measure" type="quantitative" />
+            <column-instance column="[orders]" derivation="Sum" name="[sum:orders:qk]" pivot="key" type="quantitative" />
+            <column caption="Reviewed Orders" datatype="integer" name="[reviewed_orders]" role="measure" type="quantitative" />
+            <column-instance column="[reviewed_orders]" derivation="Sum" name="[sum:reviewed_orders:qk]" pivot="key" type="quantitative" />
+            <column caption="Late Orders" datatype="integer" name="[late_orders]" role="measure" type="quantitative" />
+            <column-instance column="[late_orders]" derivation="Sum" name="[sum:late_orders:qk]" pivot="key" type="quantitative" />
+            <column caption="Average Review Score" datatype="real" name="[average_review_score]" role="measure" type="quantitative" default-format="n0.00" />
+            <column-instance column="[average_review_score]" derivation="Avg" name="[avg:average_review_score:qk]" pivot="key" type="quantitative" />
+          </datasource-dependencies>
+          <filter class="categorical" column="[federated.0wx14uh15ha96i11kfkt21eho23r].[none:question:nk]">
+            <groupfilter function="member" level="[none:question:nk]" member="&quot;Regional priorities&quot;" />
+          </filter>
+          <filter class="categorical" column="[federated.0wx14uh15ha96i11kfkt21eho23r].[none:ranked_state:ok]">
+            <groupfilter function="union" level="[none:ranked_state:ok]">
+              <groupfilter function="member" level="[none:ranked_state:ok]" member="&quot;01  SP&quot;" />
+              <groupfilter function="member" level="[none:ranked_state:ok]" member="&quot;02  RJ&quot;" />
+              <groupfilter function="member" level="[none:ranked_state:ok]" member="&quot;03  MG&quot;" />
+              <groupfilter function="member" level="[none:ranked_state:ok]" member="&quot;04  BA&quot;" />
+              <groupfilter function="member" level="[none:ranked_state:ok]" member="&quot;05  RS&quot;" />
+              <groupfilter function="member" level="[none:ranked_state:ok]" member="&quot;06  SC&quot;" />
+              <groupfilter function="member" level="[none:ranked_state:ok]" member="&quot;07  ES&quot;" />
+              <groupfilter function="member" level="[none:ranked_state:ok]" member="&quot;08  PR&quot;" />
+              <groupfilter function="member" level="[none:ranked_state:ok]" member="&quot;09  CE&quot;" />
+              <groupfilter function="member" level="[none:ranked_state:ok]" member="&quot;10  PE&quot;" />
+            </groupfilter>
+          </filter>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="mark">
+            <format attr="mark-color" value="#b45309" />
+            <format attr="mark-labels-show" value="true" />
+          </style-rule>
+          <style-rule element="cell">
+            <format attr="font-family" value="Arial" />
+            <format attr="font-size" value="10" />
+          </style-rule>
+          <style-rule element="axis">
+            <format attr="font-size" value="9" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Bar" />
+            <encodings>
+              <tooltip column="[federated.0wx14uh15ha96i11kfkt21eho23r].[sum:orders:qk]" />
+              <text column="[federated.0wx14uh15ha96i11kfkt21eho23r].[avg:late_pct:qk]" />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run>&lt;[federated.0wx14uh15ha96i11kfkt21eho23r].[none:ranked_state:ok]&gt;
+late_pct: &lt;[federated.0wx14uh15ha96i11kfkt21eho23r].[avg:late_pct:qk]&gt;
+Eligible orders: &lt;[federated.0wx14uh15ha96i11kfkt21eho23r].[sum:orders:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows>[federated.0wx14uh15ha96i11kfkt21eho23r].[none:ranked_state:ok]</rows>
+        <cols>[federated.0wx14uh15ha96i11kfkt21eho23r].[avg:late_pct:qk]</cols>
+      </table>
+      <simple-id uuid="{50FD2ECB-180E-4277-9907-F67D6F9FA7A9}" />
+    </worksheet>
+    <worksheet name="2 | Monthly late rate (%) - n &gt;= 100">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Arial" fontsize="10" bold="true">2 | Monthly late rate (%) - n &gt;= 100</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Olist | validated operational metrics" name="federated.0wx14uh15ha96i11kfkt21eho23r" />
+          </datasources>
+          <datasource-dependencies datasource="federated.0wx14uh15ha96i11kfkt21eho23r">
+            <column caption="Purchase month" datatype="string" name="[month_label]" role="dimension" type="ordinal">
+              <calculation class="tableau" formula="RIGHT(STR(YEAR([month])),2) + &quot;-&quot; + RIGHT(&quot;0&quot; + STR(MONTH([month])), 2)" />
+            </column>
+            <column-instance column="[month_label]" derivation="None" name="[none:month_label:ok]" pivot="key" type="ordinal" />
+            <column caption="Late Pct" datatype="real" name="[late_pct]" role="measure" type="quantitative" default-format="n0.0" />
+            <column-instance column="[late_pct]" derivation="Avg" name="[avg:late_pct:qk]" pivot="key" type="quantitative" />
+            <column caption="Priority Rank" datatype="integer" name="[priority_rank]" role="measure" type="quantitative" />
+            <column-instance column="[priority_rank]" derivation="Avg" name="[avg:priority_rank:qk]" pivot="key" type="quantitative" />
+            <column caption="State" datatype="string" name="[state]" role="dimension" type="nominal" />
+            <column-instance column="[state]" derivation="None" name="[none:state:nk]" pivot="key" type="nominal" />
+            <column caption="Question" datatype="string" name="[question]" role="dimension" type="nominal" />
+            <column-instance column="[question]" derivation="None" name="[none:question:nk]" pivot="key" type="nominal" />
+            <column caption="Orders" datatype="integer" name="[orders]" role="measure" type="quantitative" />
+            <column-instance column="[orders]" derivation="Sum" name="[sum:orders:qk]" pivot="key" type="quantitative" />
+            <column caption="Reviewed Orders" datatype="integer" name="[reviewed_orders]" role="measure" type="quantitative" />
+            <column-instance column="[reviewed_orders]" derivation="Sum" name="[sum:reviewed_orders:qk]" pivot="key" type="quantitative" />
+            <column caption="Late Orders" datatype="integer" name="[late_orders]" role="measure" type="quantitative" />
+            <column-instance column="[late_orders]" derivation="Sum" name="[sum:late_orders:qk]" pivot="key" type="quantitative" />
+            <column caption="Average Review Score" datatype="real" name="[average_review_score]" role="measure" type="quantitative" default-format="n0.00" />
+            <column-instance column="[average_review_score]" derivation="Avg" name="[avg:average_review_score:qk]" pivot="key" type="quantitative" />
+            <column caption="Include reliable month" datatype="boolean" name="[include_month]" role="dimension" type="nominal">
+              <calculation class="tableau" formula="[question] = &quot;Monthly reliability&quot; AND [orders] &gt;= 100" />
+            </column>
+            <column-instance column="[include_month]" derivation="None" name="[none:include_month:nk]" pivot="key" type="nominal" />
+            <column caption="Month" datatype="date" name="[month]" role="dimension" type="ordinal" />
+            <column-instance column="[month]" derivation="None" name="[none:month:ok]" pivot="key" type="ordinal" />
+          </datasource-dependencies>
+          <filter class="categorical" column="[federated.0wx14uh15ha96i11kfkt21eho23r].[none:question:nk]">
+            <groupfilter function="member" level="[none:question:nk]" member="&quot;Monthly reliability&quot;" />
+          </filter>
+          <filter class="categorical" column="[federated.0wx14uh15ha96i11kfkt21eho23r].[none:include_month:nk]">
+            <groupfilter function="member" level="[none:include_month:nk]" member="true" />
+          </filter>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="mark">
+            <format attr="mark-color" value="#0f766e" />
+            <format attr="mark-labels-show" value="false" />
+          </style-rule>
+          <style-rule element="cell">
+            <format attr="font-family" value="Arial" />
+            <format attr="font-size" value="10" />
+          </style-rule>
+          <style-rule element="axis">
+            <format attr="font-size" value="9" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Line" />
+            <encodings>
+              <tooltip column="[federated.0wx14uh15ha96i11kfkt21eho23r].[sum:orders:qk]" />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run>&lt;[federated.0wx14uh15ha96i11kfkt21eho23r].[none:month_label:ok]&gt;
+late_pct: &lt;[federated.0wx14uh15ha96i11kfkt21eho23r].[avg:late_pct:qk]&gt;
+Eligible orders: &lt;[federated.0wx14uh15ha96i11kfkt21eho23r].[sum:orders:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows>[federated.0wx14uh15ha96i11kfkt21eho23r].[avg:late_pct:qk]</rows>
+        <cols>[federated.0wx14uh15ha96i11kfkt21eho23r].[none:month_label:ok]</cols>
+      </table>
+      <simple-id uuid="{C0E9E3BB-EABC-4F5C-A600-7EBE1E4F6A38}" />
+    </worksheet>
+    <worksheet name="3 | Review scores by outcome (1-5)">
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname="Arial" fontsize="10" bold="true">3 | Review scores by outcome (1-5)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption="Olist | validated operational metrics" name="federated.0wx14uh15ha96i11kfkt21eho23r" />
+          </datasources>
+          <datasource-dependencies datasource="federated.0wx14uh15ha96i11kfkt21eho23r">
+            <column caption="Delivery Outcome" datatype="string" name="[delivery_outcome]" role="dimension" type="nominal" />
+            <column-instance column="[delivery_outcome]" derivation="None" name="[none:delivery_outcome:nk]" pivot="key" type="nominal" />
+            <column caption="Average Review Score" datatype="real" name="[average_review_score]" role="measure" type="quantitative" default-format="n0.00" />
+            <column-instance column="[average_review_score]" derivation="Avg" name="[avg:average_review_score:qk]" pivot="key" type="quantitative" />
+            <column caption="Priority Rank" datatype="integer" name="[priority_rank]" role="measure" type="quantitative" />
+            <column-instance column="[priority_rank]" derivation="Avg" name="[avg:priority_rank:qk]" pivot="key" type="quantitative" />
+            <column caption="State" datatype="string" name="[state]" role="dimension" type="nominal" />
+            <column-instance column="[state]" derivation="None" name="[none:state:nk]" pivot="key" type="nominal" />
+            <column caption="Question" datatype="string" name="[question]" role="dimension" type="nominal" />
+            <column-instance column="[question]" derivation="None" name="[none:question:nk]" pivot="key" type="nominal" />
+            <column caption="Orders" datatype="integer" name="[orders]" role="measure" type="quantitative" />
+            <column-instance column="[orders]" derivation="Sum" name="[sum:orders:qk]" pivot="key" type="quantitative" />
+            <column caption="Reviewed Orders" datatype="integer" name="[reviewed_orders]" role="measure" type="quantitative" />
+            <column-instance column="[reviewed_orders]" derivation="Sum" name="[sum:reviewed_orders:qk]" pivot="key" type="quantitative" />
+            <column caption="Late Orders" datatype="integer" name="[late_orders]" role="measure" type="quantitative" />
+            <column-instance column="[late_orders]" derivation="Sum" name="[sum:late_orders:qk]" pivot="key" type="quantitative" />
+            <column caption="Late Pct" datatype="real" name="[late_pct]" role="measure" type="quantitative" default-format="n0.0" />
+            <column-instance column="[late_pct]" derivation="Avg" name="[avg:late_pct:qk]" pivot="key" type="quantitative" />
+          </datasource-dependencies>
+          <filter class="categorical" column="[federated.0wx14uh15ha96i11kfkt21eho23r].[none:question:nk]">
+            <groupfilter function="member" level="[none:question:nk]" member="&quot;Review association&quot;" />
+          </filter>
+          <aggregation value="true" />
+        </view>
+        <style>
+          <style-rule element="mark">
+            <format attr="mark-color" value="#334155" />
+            <format attr="mark-labels-show" value="true" />
+          </style-rule>
+          <style-rule element="cell">
+            <format attr="font-family" value="Arial" />
+            <format attr="font-size" value="10" />
+          </style-rule>
+          <style-rule element="axis">
+            <format attr="font-size" value="9" />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option="selection-relaxation-allow">
+            <view>
+              <breakdown value="auto" />
+            </view>
+            <mark class="Bar" />
+            <encodings>
+              <tooltip column="[federated.0wx14uh15ha96i11kfkt21eho23r].[sum:orders:qk]" />
+              <text column="[federated.0wx14uh15ha96i11kfkt21eho23r].[avg:average_review_score:qk]" />
+              <tooltip column="[federated.0wx14uh15ha96i11kfkt21eho23r].[sum:reviewed_orders:qk]" />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run>&lt;[federated.0wx14uh15ha96i11kfkt21eho23r].[none:delivery_outcome:nk]&gt;
+average_review_score: &lt;[federated.0wx14uh15ha96i11kfkt21eho23r].[avg:average_review_score:qk]&gt;
+Eligible orders: &lt;[federated.0wx14uh15ha96i11kfkt21eho23r].[sum:orders:qk]&gt;</run>
+                <run>
+Reviewed orders: &lt;[federated.0wx14uh15ha96i11kfkt21eho23r].[sum:reviewed_orders:qk]&gt;
+Descriptive association; not a causal effect.</run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows>[federated.0wx14uh15ha96i11kfkt21eho23r].[none:delivery_outcome:nk]</rows>
+        <cols>[federated.0wx14uh15ha96i11kfkt21eho23r].[avg:average_review_score:qk]</cols>
+      </table>
+      <simple-id uuid="{CF66FDC9-2BE3-4AAC-B3C0-50544FBE997B}" />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name="Delivery Insights | Operations review">
+      <style>
+        <style-rule element="dashboard">
+          <format attr="background-color" value="#f1f5f9" />
+        </style-rule>
+      </style>
+      <size maxheight="660" maxwidth="1000" minheight="660" minwidth="1000" />
+      <zones>
+        <zone h="100000" id="1" type-v2="layout-basic" w="100000" x="0" y="0">
+          <zone id="2" x="1000" y="500" w="98000" h="10000" type-v2="text">
+            <formatted-text>
+              <run fontname="Arial" fontsize="10" fontcolor="#0f172a">DELIVERY INSIGHTS  /  OPERATIONS REVIEW
+96,470 eligible deliveries   |   6,534 late   |   6.77% late
+</run>
+            </formatted-text>
+            <zone-style>
+              <format attr="margin" value="12" />
+            </zone-style>
+          </zone>
+          <zone id="3" name="1a | Top 10 investigation regions" x="1500" y="11500" w="48000" h="38500">
+            <zone-style>
+              <format attr="background-color" value="#ffffff" />
+              <format attr="margin" value="10" />
+            </zone-style>
+          </zone>
+          <zone id="4" name="1b | Late rate in those regions (%)" x="51000" y="11500" w="47500" h="38500">
+            <zone-style>
+              <format attr="background-color" value="#ffffff" />
+              <format attr="margin" value="10" />
+            </zone-style>
+          </zone>
+          <zone id="5" name="2 | Monthly late rate (%) - n &gt;= 100" x="1500" y="52500" w="60000" h="30000">
+            <zone-style>
+              <format attr="background-color" value="#ffffff" />
+              <format attr="margin" value="10" />
+            </zone-style>
+          </zone>
+          <zone id="6" name="3 | Review scores by outcome (1-5)" x="63500" y="52500" w="35000" h="30000">
+            <zone-style>
+              <format attr="background-color" value="#ffffff" />
+              <format attr="margin" value="10" />
+            </zone-style>
+          </zone>
+          <zone id="8" x="1500" y="85000" w="97000" h="14000" type-v2="text">
+            <formatted-text>
+              <run fontname="Arial" fontsize="8" fontcolor="#475569">READ BEFORE ACTING
+Region = customer state; it does not identify a responsible carrier. Regional charts require n &gt;= 100. Monthly trend excludes n &lt; 100; latest cohorts have incomplete follow-up. Review means exclude missing scores and average repeated reviews within each order.
+Source: Olist and collaborators / Kaggle Brazilian E-Commerce Public Dataset. CC BY-NC-SA 4.0. No observed delivery improvement or financial savings.</run>
+            </formatted-text>
+            <zone-style>
+              <format attr="margin" value="12" />
+            </zone-style>
+          </zone>
+          <zone-style />
+        </zone>
+      </zones>
+      <simple-id uuid="{5A8286EC-A592-4E5E-8D36-C731339C13C1}" />
+    </dashboard>
+  </dashboards>
+  <windows>
+    <window class="worksheet" name="1a | Top 10 investigation regions" maximized="true">
+      <cards />
+      <viewpoint />
+      <simple-id uuid="{A588CE32-6ACC-429C-975A-6A77F56C785E}" />
+    </window>
+    <window class="worksheet" name="1b | Late rate in those regions (%)" maximized="true">
+      <cards />
+      <viewpoint />
+      <simple-id uuid="{476D103B-597F-4BBE-8C08-0A0A00A3FDE2}" />
+    </window>
+    <window class="worksheet" name="2 | Monthly late rate (%) - n &gt;= 100" maximized="true">
+      <cards />
+      <viewpoint />
+      <simple-id uuid="{54034730-5753-4F40-9372-CBA27DC3776A}" />
+    </window>
+    <window class="worksheet" name="3 | Review scores by outcome (1-5)" maximized="true">
+      <cards />
+      <viewpoint />
+      <simple-id uuid="{F11B8640-4E50-417F-B2CA-F16B617E5192}" />
+    </window>
+    <window class="dashboard" name="Delivery Insights | Operations review" maximized="true">
+      <viewpoints>
+        <viewpoint name="1a | Top 10 investigation regions">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="1b | Late rate in those regions (%)">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="2 | Monthly late rate (%) - n &gt;= 100">
+          <zoom type="entire-view" />
+        </viewpoint>
+        <viewpoint name="3 | Review scores by outcome (1-5)">
+          <zoom type="entire-view" />
+        </viewpoint>
+      </viewpoints>
+      <active id="-1" />
+      <simple-id uuid="{3D756169-C6D2-4366-BC81-ADD5688413DB}" />
+    </window>
+  </windows>
+</workbook>

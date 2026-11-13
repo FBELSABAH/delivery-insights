@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-11-13T02:21:25.288780+00:00",
+  "backend": "PostgreSQL",
+  "server_version": "PostgreSQL 18.7 (Homebrew) on aarch64-apple-darwin24.6.0, compiled by Apple clang version 17.0.0 (clang-1700.6.4.2), 64-bit",
+  "archive_sha256": "967e41e04fc306fe604e2a693f488995a8b41e5047418f8a5c8e4abd6deca784",
+  "source_rows": {
+    "customers": 99441,
+    "orders": 99441,
+    "order_items": 112650,
+    "order_reviews": 99224
+  },
+  "summary": {
+    "observed_deliveries": 96470,
+    "late_deliveries": 6534,
+    "late_pct": 6.77309,
+    "first_purchase": "2016-09-15",
+    "last_purchase": "2018-08-29",
+    "excluded_orders": 2971
+  },
+  "fact_fingerprint": "9af830408e160518f1212112c599919c",
+  "export_sha256": {
+    "regions": "eaa516a2414e25ccd3eebe906a763e26b7bdb9138aff7395ac3c35cb3e6c4204",
+    "trends": "c945295f3c56454170adb0fc4d7f3f740c14bcb766f568710b59ee084d8647fa",
+    "reviews": "907cabb1b17c152fd986b1219537cdc82932f6ac9da1374823c7d7b245fd667b",
+    "tableau_metrics": "641f06eb470e72d852d87aad50d72eadb61231046e65e47ddc40c4b4b676dbce"
+  },
+  "timing_seconds": {
+    "validation": 3.537,
+    "load_and_reconcile": 2.38,
+    "total": 6.553
+  },
+  "environment": {
+    "platform": "Darwin",
+    "machine": "arm64",
+    "python": "3.14.3"
+  },
+  "source": "https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce"
+}

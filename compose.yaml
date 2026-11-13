@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:18.3
+    environment:
+      POSTGRES_DB: delivery_insights
+      POSTGRES_USER: delivery
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    ports:
+      - "127.0.0.1:55432:5432"
+    volumes:
+      - warehouse:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U delivery -d delivery_insights"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+volumes:
+  warehouse:

@@ -1,0 +1,46 @@
+{
+  "runs": 3,
+  "identical_metrics_facts_and_exports": true,
+  "load_strategy": "Transactional full refresh, not append; warm local runs, no network download included.",
+  "measurements": [
+    {
+      "run": 1,
+      "timing_seconds": {
+        "validation": 3.406,
+        "load_and_reconcile": 2.506,
+        "total": 6.56
+      },
+      "observed_deliveries": 96470,
+      "late_deliveries": 6534,
+      "fact_fingerprint": "9af830408e160518f1212112c599919c"
+    },
+    {
+      "run": 2,
+      "timing_seconds": {
+        "validation": 3.553,
+        "load_and_reconcile": 2.401,
+        "total": 6.6
+      },
+      "observed_deliveries": 96470,
+      "late_deliveries": 6534,
+      "fact_fingerprint": "9af830408e160518f1212112c599919c"
+    },
+    {
+      "run": 3,
+      "timing_seconds": {
+        "validation": 3.537,
+        "load_and_reconcile": 2.38,
+        "total": 6.553
+      },
+      "observed_deliveries": 96470,
+      "late_deliveries": 6534,
+      "fact_fingerprint": "9af830408e160518f1212112c599919c"
+    }
+  ],
+  "environment": {
+    "platform": "Darwin",
+    "machine": "arm64",
+    "python": "3.14.3"
+  },
+  "server_version": "PostgreSQL 18.7 (Homebrew) on aarch64-apple-darwin24.6.0, compiled by Apple clang version 17.0.0 (clang-1700.6.4.2), 64-bit"
+}
