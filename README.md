@@ -4,6 +4,8 @@
 
 This is a portfolio case study, not work commissioned by Olist or a PEI employer. Results describe a 2016-2018 Brazilian marketplace snapshot, not current operating performance.
 
+Of the 99,441 source orders, 96,470 are eligible for delivery analysis; 6,534 were late (6.77%). [Inspect the SQL definitions](sql/postgres/schema.sql) or [read the findings](reports/findings.md).
+
 ## Explore
 
 - [One-page decision brief](reports/decision_brief.pdf): findings, proposed investigations, limitations and measured technical results.
@@ -60,7 +62,7 @@ The workbook contains aggregates only, without customer/order identifiers or fre
 
 Unit tests exercise invalid money/timestamps, duplicates, orphan references, missing values and repeated review IDs. With `DATABASE_URL` set, integration tests verify PostgreSQL calendar-day logic, preaggregation, exact reconciliation and rollback after a foreign-key failure. Synthetic test defects are not reported as defects found in the original archive.
 
-The original SQLite demonstration remains available through `python3 run.py`; it writes to `reports/legacy/` so it cannot overwrite PostgreSQL outputs.
+The original offline HTML dashboard remains available at `reports/dashboard.html`. The original SQLite demonstration remains available through `python3 run.py`; it writes to `reports/legacy/` so it cannot overwrite PostgreSQL outputs.
 
 ## Attribution and limits
 

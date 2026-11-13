@@ -3,6 +3,39 @@ from pathlib import Path
 import csv, sqlite3, zipfile, hashlib, json, html, time
 ROOT=Path(__file__).resolve().parent
 
+def findings_markdown(results):
+    summary = results["summary"]
+    largest = results["regions"][0]
+    source_orders = results["provenance"]["source_rows"]["orders"]
+    review_rows = [
+        "| Delivery outcome | Orders with a review | Mean review score (out of 5) |",
+        "| --- | ---: | ---: |",
+    ]
+    for group in sorted(results["reviews"], key=lambda row: row["late"]):
+        label = "Late" if group["late"] else "On time or early"
+        mean = group["average_score"]
+        score = f"{mean:.2f}" if mean is not None else "—"
+        review_rows.append(f"| {label} | {group['reviewed_orders']:,} | {score} |")
+    review_table = "\n".join(review_rows)
+
+    return f"""# Delivery investigation brief
+
+Of {source_orders:,} Olist orders, {summary['observed_deliveries']:,} were delivered with usable dates. **{summary['late_deliveries']:,} ({summary['late_pct']:.2f}%) arrived late.** The rate excludes {summary['excluded_orders']:,} orders. A delivery is late when it arrives after the promised calendar date.
+
+## Where to investigate
+
+Customer state **{largest['state']}** had the most late deliveries ({largest['late_orders']:,}). The regional table reports both the count and the rate for states with at least 100 eligible orders. High order volume can produce many late deliveries even when the rate is relatively low. [Compare states](regions.csv) or [see the monthly trend](trends.csv).
+
+## What customers reported
+
+{review_table}
+
+Each reviewed order counts once. Multiple reviews for an order are averaged first. Orders without a review are excluded from the score averages, and customers who leave reviews may differ from those who do not. These historical observations cannot identify a carrier or explain what caused a rating.
+
+[Metric definitions](../../sql/model.sql) · [Source, row counts, and build results](results.json)
+"""
+
+
 def build():
  start=time.perf_counter(); out=ROOT/'reports/legacy';out.mkdir(parents=True,exist_ok=True)
  archive=ROOT/'data/olist.zip'
@@ -37,8 +70,7 @@ def build():
  results['provenance']={'source':'https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce','archive_sha256':hashlib.sha256(archive.read_bytes()).hexdigest(),'source_rows':counts,'build_seconds':round(time.perf_counter()-start,3)}
  (out/'results.json').write_text(json.dumps(results,indent=2))
  target=sqlite3.connect(str(ROOT/'data/analytics.sqlite'));db.backup(target);target.close()
- top=results['regions'][0]
- (out/'findings.md').write_text(f"# Delivery investigation brief\n\nObserved {summary['observed_deliveries']:,} delivered orders with usable dates; {summary['late_deliveries']:,} were late ({summary['late_pct']:.2f}%). Excluded {summary['excluded_orders']:,} orders from this metric.\n\nFirst investigation region: {top['state']}, with {top['late_orders']:,} late deliveries. Prioritize by incident volume; the dashboard also shows rates to distinguish scale from reliability. Investigate carriers, routes and promises before changing operations.\n\nReviews by delivery outcome: {json.dumps(results['reviews'])}. This is descriptive association, not a causal effect. Missing reviews may be selective.\n\nMeasured technical impact: automated ingestion, four-table reconciliation, ranked geographic analysis and month-over-month reporting in {results['provenance']['build_seconds']} seconds on this run. No revenue uplift or delivery improvement has been observed.\n\nHistorical 2016–2018 marketplace sample; no claim of current operating performance. Late means delivered calendar date after promised calendar date. Multiple reviews are averaged per order; missing reviews are excluded from review means. Item value excludes freight and is not profit.\n")
+ (out/'findings.md').write_text(findings_markdown(results), encoding='utf-8')
  payload=json.dumps(results).replace('<','\u003c')
  template=(ROOT/'dashboard.html').read_text();(out/'dashboard.html').write_text(template.replace('/*DATA*/{}',payload))
  print(json.dumps(results['summary'],indent=2));print('Build and reconciliation checks passed.')

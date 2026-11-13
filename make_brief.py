@@ -35,8 +35,8 @@ def render():
  section('Scope and next decision','Late means delivered calendar date after promised date. Review rows are averaged within each order before group comparison. Regional charts require 100 eligible orders. Validate the proposed investigations with an operations owner before recommending changes. No actual delivery reduction, cost saving or customer adoption has been demonstrated.')
  story += [Spacer(1,9),p('Source: Olist and collaborators, Brazilian E-Commerce Public Dataset (2016-2018), Kaggle. CC BY-NC-SA 4.0. Portfolio analysis; not commissioned by Olist. Runtime: '+escape(bench['environment']['platform']+' '+bench['environment']['machine']+', Python '+bench['environment']['python']+'. PostgreSQL 18; exact version in benchmark.json.'),'FootDI')]
  doc=SimpleDocTemplate(str(out/'decision_brief.pdf'),pagesize=(612,792),rightMargin=45,leftMargin=45,topMargin=32,bottomMargin=30,title='Delivery Insights - Decision Brief',author='Faris Elsabah')
- prose=[x.text for x in story if isinstance(x,Paragraph)]
+ prose=[('## ' if x.style.name=='HeadDI' else '')+x.text for x in story if isinstance(x,Paragraph)]
  doc.build(story)
- (out/'findings.md').write_text('# Delivery investigation brief\n\n'+ '\n\n'.join(x for x in prose)+'\n')
+ (out/'findings.md').write_text('# Delivery investigation brief\n\n'+ '\n\n'.join(prose[1:]) + '\n\n## Review comparison\n\n| Delivery outcome | Reviewed orders | Mean score / 5 |\n|---|---:|---:|\n' + f'| On time or early | {int(ontime["reviewed_orders"]):,} | {float(ontime["average_review_score"]):.2f} |\n| Late | {int(late["reviewed_orders"]):,} | {float(late["average_review_score"]):.2f} |\n' + '\n[Metric definitions](../docs/schema.md) | [Machine-readable quality audit](data_quality.json) | [Measured rebuilds](benchmark.json)'+'\n')
  print(out/'decision_brief.pdf')
 if __name__=='__main__':render()

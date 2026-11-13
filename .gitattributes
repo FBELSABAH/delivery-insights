@@ -1,0 +1,4 @@
+reports/dashboard.html linguist-generated
+sql/*.sql linguist-detectable
+tableau/*.twb linguist-generated
+*.pdf binary
